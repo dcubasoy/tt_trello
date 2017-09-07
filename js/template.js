@@ -83,13 +83,13 @@ var formatNPSUrl = function(t, url){
 
 var boardButtonCallback = function(t){
   return t.popup({
-    title: 'Popup List Example',
+    title: 'AYUDA',
     items: [
       {
-        text: 'Open Overlay',
+        text: 'Procedimiento de trabajo',
         callback: function(t){
           return t.overlay({
-            url: './overlay.html',
+            url: './procedimiento.html',
             args: { rand: (Math.random() * 100).toFixed(0) }
           })
           .then(function(){
@@ -98,10 +98,10 @@ var boardButtonCallback = function(t){
         }
       },
       {
-        text: 'Open Board Bar',
+        text: 'Leyenda',
         callback: function(t){
           return t.boardBar({
-            url: './board-bar.html',
+            url: './leyenda.html',
             height: 200
           })
           .then(function(){
