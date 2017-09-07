@@ -1,20 +1,87 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
-    <link rel="stylesheet" href="./css/overlay.css">
-    <script src="https://trello.com/power-ups/power-up.min.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h2>Tips for using t.overlay()</h2>
-      <hr/>
-      <ol>
-        <li>You should only call t.overlay() as a response to a user action, such as clicking a button.</li>
-        <li>Try to use t.popup() when possible instead of t.overlay()as it helps to better maintain context.</li>
-        <li>When using an overlay, be sure to keep the user aware they haven't left their Trello board, and make it easy and intuitive to close.</li>
-        <li>Try to get your overlay to load and render as quickly as possible.</li>
-      </ol>
-    </div>
-    <script src="./js/overlay.js"></script>
-  </body>
+    <head>
+        <link href="https://trello.com/power-ups/power-up.css" rel="stylesheet">
+            <link href="./css/overlay.css" rel="stylesheet">
+                <script src="https://trello.com/power-ups/power-up.min.js">
+                </script>
+            </link>
+        </link>
+    </head>
+    <body>
+        <div id="content">
+            <h2>
+                Procedimiento de trabajo
+            </h2>
+            <hr/>
+            <p>
+                Aparecerán en el
+                <strong>
+                    sprint
+                </strong>
+                TODAS las tareas que tenemos que sacar esta semana.
+            </p>
+            <p>
+                Podemos filtrar tarjetas para ver sólo las nuestras.
+                <br/>
+                Cuando nos ponemos a trabajar con una tarjeta la pasamos a doing.
+            </p>
+            <p>
+                Una vez finalizada una tarjeta, le añadimos un comentario con las Hora Realizadas (HR:10) y la movemos al proyecto original a la lista
+                <strong>
+                    done
+                </strong>
+                .
+            </p>
+            <p>
+                Si nos piden cambiar de tarea, dejamos de nuevo la tarjeta en el
+                <strong>
+                    sprint
+                </strong>
+                y cogemos la nueva tarjeta.
+            </p>
+            <p>
+                En
+                <strong>
+                    doing
+                </strong>
+                únicamente está la tarjeta con la que estamos trabajando
+            </p>
+            <p>
+                Si nos quedamos sin tarjetas para realizar miramos en el
+                <strong>
+                    sprint
+                </strong>
+                si hay alguna tarjeta que podemos sacar aunque no la tengamos asignada.
+            </p>
+            <p>
+                Puede que nos aparezcan tarjetas asignadas en las listas
+                <strong>
+                    support
+                </strong>
+                y
+                <strong>
+                    test
+                </strong>
+                y debemos darles también salida en el sprint semanal.
+            </p>
+            <p>
+                Las tarjetas de
+                <strong>
+                    test
+                </strong>
+                tambien se le añade un HR:XX con las horas que lleve el test como NOTA:TEST OK o TEST KO (si falla) y se mueven a la lista release del proyecto si esta OK o a la lista sprint de esta misma vista si esta KO.
+            </p>
+            <p>
+                Es decir, puede volver a entrar en el sprint por no haber superado el TEST.
+            </p>
+            <p>
+                Si no supera el test es necesario indicar en un comentario que ha ocurrido para que el programador pueda resolverlo.
+            </p>
+            <p>
+                Se supone que la carga de todas las tarjetas asignadas no deben superar un peso total, si es necesario incluir en el sprint una tarjeta con carga con el sprint ya lanzado se deberá sacar del sprint el mismo peso de tareas para devolverlo a los todo del proyecto correspondiente.
+            </p>
+        </div>
+        <script src="./js/overlay.js">
+        </script>
+    </body>
 </html>
