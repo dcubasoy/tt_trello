@@ -2,6 +2,7 @@
 
 var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
+var HELP_ICON = './images/help-64x64.png';
 
 var parkMap = {
   acad: 'Acadia National Park',
@@ -191,8 +192,8 @@ TrelloPowerUp.initialize({
   },
   'board-buttons': function(t, options){
     return [{
-      icon: WHITE_ICON,
-      text: 'Template',
+      icon: HELP_ICON,
+      text: '¿Te Ayudamos?',
       callback: boardButtonCallback
     }];
   },
