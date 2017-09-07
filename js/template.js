@@ -81,7 +81,7 @@ var formatNPSUrl = function(t, url){
   }
 };
 
-var boardButtonCallback = function(t){
+var show_help = function(t){
   return t.popup({
     title: 'AYUDA',
     items: [
@@ -195,7 +195,7 @@ TrelloPowerUp.initialize({
     return [{
       icon: WHITE_HELP_ICON,
       text: '¿Te Ayudamos?',
-      callback: boardButtonCallback
+      callback: show_help
     }];
   },
   'card-badges': function(t, options){
