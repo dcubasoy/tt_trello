@@ -5,7 +5,6 @@ var WHITE_HELP_ICON = './images/help-64x64.png';
 var GRAY_CLOCK_ICON = './images/alarm_grey_108x108.png';
 /* Inicializamos el objeto de TRELLO */
 TrelloPowerUp.initialize({
-    /* 1- Botón de ayuda */
     'board-buttons': function(t, options) {
         return [{
             icon: WHITE_HELP_ICON,
@@ -13,7 +12,6 @@ TrelloPowerUp.initialize({
             callback: show_help
         }];
     },
-    /* 2- Botón para estimar tarea */
     'card-buttons': function(t, options) {
         return [{
             icon: GRAY_CLOCK_ICON,
@@ -21,7 +19,6 @@ TrelloPowerUp.initialize({
             callback: task_time_estimation
         }];
     },
-    /* 3- Mostrar ajustes de los tweaks */
     'show-settings': function(t, options) {
         return t.popup({
             title: 'Settings',
@@ -63,8 +60,8 @@ var show_help = function(t) {
     });
 };
 var task_time_estimation = function(t) {
-  return t.popup({
-                    title: "Estimación",
-                    url: 'estimate.html',
-                });
+    return t.popup({
+        title: "Estimación",
+        url: 'estimate.html',
+    });
 };
