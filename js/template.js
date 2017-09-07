@@ -2,7 +2,8 @@
 
 var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
-var HELP_ICON = './images/help-64x64.png';
+var WHITE_HELP_ICON = './images/help-64x64.png';
+var GRAY_CLOCK_ICON = './images/alarm_grey_108x108.png';
 
 var parkMap = {
   acad: 'Acadia National Park',
@@ -192,7 +193,7 @@ TrelloPowerUp.initialize({
   },
   'board-buttons': function(t, options){
     return [{
-      icon: HELP_ICON,
+      icon: WHITE_HELP_ICON,
       text: '¿Te Ayudamos?',
       callback: boardButtonCallback
     }];
@@ -202,8 +203,8 @@ TrelloPowerUp.initialize({
   },
   'card-buttons': function(t, options) {
     return [{
-      icon: GRAY_ICON,
-      text: 'Template',
+      icon: GRAY_CLOCK_ICON,
+      text: 'Estimar',
       callback: cardButtonCallback
     }];
   },
