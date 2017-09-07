@@ -1,92 +1,70 @@
-
 /* global TrelloPowerUp */
-
-var WHITE_ICON            = './images/icon-white.svg';
-var GRAY_ICON             = './images/icon-gray.svg';
-var WHITE_HELP_ICON       = './images/help-64x64.png';
-var GRAY_CLOCK_ICON       = './images/alarm_grey_108x108.png';
-
-
+var WHITE_ICON = './images/icon-white.svg';
+var GRAY_ICON = './images/icon-gray.svg';
+var WHITE_HELP_ICON = './images/help-64x64.png';
+var GRAY_CLOCK_ICON = './images/alarm_grey_108x108.png';
 /* Inicializamos el objeto de TRELLO */
-
 TrelloPowerUp.initialize({
-  
-   /* 1- Botón de ayuda */
-  'board-buttons': function(t, options){
-    return [{
-      icon: WHITE_HELP_ICON,
-      text: '¿Te Ayudamos?',
-      callback: show_help
-    }];
-  },
-
-  'card-badges': function(t, options){
-    return getBadges(t);
-  },
-
-
-  /* 2- Botón para estimar tarea */
-  'card-buttons': function(t, options) {
-    return [{
-      icon: GRAY_CLOCK_ICON,
-      text: 'Estimar',
-      callback: task_time_estimation
-    }];
-  },
-
-
-  /* 3- Mostrar ajustes de los tweaks */
-  'show-settings': function(t, options){
-    return t.popup({
-      title: 'Settings',
-      url: './settings.html',
-      height: 184
-    });
-  }
+    /* 1- Botón de ayuda */
+    'board-buttons': function(t, options) {
+        return [{
+            icon: WHITE_HELP_ICON,
+            text: '¿Te Ayudamos?',
+            callback: show_help
+        }];
+    },
+    /* 2- Botón para estimar tarea */
+    'card-buttons': function(t, options) {
+        return [{
+            icon: GRAY_CLOCK_ICON,
+            text: 'Estimar',
+            callback: task_time_estimation
+        }];
+    },
+    /* 3- Mostrar ajustes de los tweaks */
+    'show-settings': function(t, options) {
+        return t.popup({
+            title: 'Settings',
+            url: './settings.html',
+            height: 184
+        });
+    }
 });
-
-
-
 /***********************************************************************************************************/
 /* Ventanas de ayuda 
 /***********************************************************************************************************/
-
-
 /* Ventanas de ayuda */
-var show_help = function(t){
+var show_help = function(t) {
+    return t.popup({
+        title: 'AYUDA',
+        items: [{
+            text: 'Procedimiento de trabajo',
+            callback: function(t) {
+                return t.overlay({
+                    url: './procedimiento.html',
+                    args: {
+                        rand: (Math.random() * 100).toFixed(0)
+                    }
+                }).then(function() {
+                    return t.closePopup();
+                });
+            }
+        }, {
+            text: 'Leyenda',
+            callback: function(t) {
+                return t.boardBar({
+                    url: './leyenda.html',
+                    height: 200
+                }).then(function() {
+                    return t.closePopup();
+                });
+            }
+        }]
+    });
+};
+var task_time_estimation = function(t) {
   return t.popup({
-    title: 'AYUDA',
-    items: [
-      {
-        text: 'Procedimiento de trabajo',
-        callback: function(t){
-          return t.overlay({
-            url: './procedimiento.html',
-            args: { rand: (Math.random() * 100).toFixed(0) }
-          })
-          .then(function(){
-            return t.closePopup();
-          });
-        }
-      },
-      {
-        text: 'Leyenda',
-        callback: function(t){
-          return t.boardBar({
-            url: './leyenda.html',
-            height: 200
-          })
-          .then(function(){
-            return t.closePopup();
-          });
-        }
-      }
-    ]
-  });
+                    title: "Estimación",
+                    url: 'estimate.html',
+                });
 };
-
-
-var task_time_estimation = function(t){
-   
-};
-
